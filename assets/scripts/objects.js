@@ -49,7 +49,7 @@ const addMoviHandler = () => {
             [extraName]: extraValue
         },
         id: Math.random().toString(),
-        formattedTitle: function () {
+        formattedTitle() {
             return this.info.title.toUpperCase();
         }
     };
