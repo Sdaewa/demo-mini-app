@@ -12,8 +12,9 @@ const renderMovies = () => {
         movieList.classList.add('visible');
     }
     movieList.innerHTML = ''; // not ideal
-    movies.forEach(() => {
-
+    movies.forEach((movie) => {
+        const movieEl = document.createElement('li');
+        movieEl.textContent = movie.info.title;
     });
 };
 
