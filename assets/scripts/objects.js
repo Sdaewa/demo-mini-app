@@ -17,14 +17,16 @@ const renderMovies = (filter = '') => {
 
     filteredMovies.forEach((movie) => {
         const movieEl = document.createElement('li');
-        // movieEl.textContent = movie.info.title;
-        // const {
-        //     formattedTitle
-        // } = movie;
+        movieEl.textContent = movie.info.title;
         const {
-            info
+            info,
+            ...otherProps
         } = movie; //object destructuting
-        let text = movie.formattedTitle() + ' - ';
+        let {
+            formattedTitle
+        } = movie;
+        formattedTitle = formattedTitle.bind(movie); // this refers to this movie object not to newMovie object
+        let text = formattedTitle() + ' - ';
         for (const key in info) {
             if (key !== 'title') {
                 text = text + `${key}: ${info[key]}`
