@@ -46,7 +46,9 @@ const addMoviHandler = () => {
     // console.log(newMovie);
 };
 
+const searchMovieHandler = () => {
 
+};
 
 addMovieBtn.addEventListener('click', addMoviHandler);
-// searchBtn.addEventListener('click', );
+searchBtn.addEventListener('click', searchMovieHandler);
