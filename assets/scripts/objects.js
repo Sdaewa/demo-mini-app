@@ -47,7 +47,8 @@ const addMoviHandler = () => {
 };
 
 const searchMovieHandler = () => {
-
+    const filterSearch = document.getElementById('filter-title').value;
+    renderMovies(filterSearch);
 };
 
 addMovieBtn.addEventListener('click', addMoviHandler);
