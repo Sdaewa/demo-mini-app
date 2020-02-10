@@ -25,7 +25,9 @@ const renderMovies = (filter = '') => {
         let {
             formattedTitle
         } = movie;
-        formattedTitle = formattedTitle.bind(movie); // this refers to this movie object not to newMovie object
+        // formattedTitle = formattedTitle.bind(movie); // this refers to this movie object not to newMovie object
+        // formattedTitle = formattedTitle.call(movie);
+        formattedTitle = formattedTitle.apply(movie);
         let text = formattedTitle() + ' - ';
         for (const key in info) {
             if (key !== 'title') {
